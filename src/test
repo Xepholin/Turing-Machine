@@ -1,0 +1,79 @@
+q0,0
+
+name = q0
+read = 0
+
+qRight0,_,>
+
+name = qRight0
+
+next state (de q0)= qRight0
+replace (de q0)   = _
+direction (de q0) = >
+
+0  q0
+1  qRight0
+2  qRight1
+3  qSearch0L
+4  q1
+5  qSearch1L
+6  qLeft0
+7  qLeft1
+8  qSearch0R
+9  qSearch1R
+10 qReject
+11 qAccept
+
+q0,a
+--------
+A,0
+A1,0,>
+
+A1,0
+A2,0,-
+
+
+
+q1,b,>
+---------
+A2,0
+A3,0,<
+
+A3,0
+A4,0,-
+
+A4,0
+A5,0,>
+
+A5,0
+B,1,>
+
+--------
+a  b
+00 01
+
+b  b
+01 01
+
+--------
+
+A,_
+B,a,>
+-------
+A,_
+A1,0,>
+
+A1,_
+B,0,>
+
+------
+
+A,_
+B,a,<
+------
+
+A,_
+A1,0,<
+
+A1,_
+B,0,<
